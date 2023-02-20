@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let imageNames = ["food0", "food1", "food2", "food3", "food4", "food5"]
+    let imageNames = ["steak", "pizza", "waffle", "ice cream", "pasta", "hamburger"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +23,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("TableViewCell", owner: self)?.first as! TableViewCell
         
-        cell.imgContainer.image = UIImage(named: "food\(indexPath.row)")
-        cell.lblImage.text = "food\(indexPath.row)"
+        cell.imgContainer.image = UIImage(named: imageNames[indexPath.row])
+        cell.lblImage.text = imageNames[indexPath.row]
         
         return cell
     }
